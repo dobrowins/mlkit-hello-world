@@ -4,12 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/preview_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
@@ -29,29 +23,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Smile probability"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_y"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Head Y"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_is_looking_right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Is looking right"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_health"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Health"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:visibility="visible" />
 
+        <TextView
+            android:id="@+id/tv_eye_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="eye status = "
+            android:visibility="gone"
+            tools:visibility="visible" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </FrameLayout>

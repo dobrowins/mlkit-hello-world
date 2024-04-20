@@ -1,21 +1,23 @@
-package rs.dobrowins.mldoom
+package rs.dobrowins.mldoom.ui
 
 import android.app.Activity
-import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.google.common.util.concurrent.FutureCallback
 import com.google.common.util.concurrent.Futures
+import com.google.common.util.concurrent.ListenableFuture
 
-inline fun onProcessCameraProvided(crossinline onSuccess: (ProcessCameraProvider) -> Unit): Activity.() -> Unit = {
+inline fun <R : Any> ProviderCallback(
+    future: ListenableFuture<R>,
+    crossinline onSuccess: (R) -> Unit): Activity.() -> Unit = {
     Futures.addCallback(
-        ProcessCameraProvider.getInstance(baseContext),
-        object : FutureCallback<ProcessCameraProvider> {
+        future,
+        object : FutureCallback<R> {
 
             override fun onFailure(t: Throwable) {
                 t.printStackTrace()
             }
 
-            override fun onSuccess(result: ProcessCameraProvider?) {
+            override fun onSuccess(result: R?) {
                 if (result == null) {
                     return
                 }

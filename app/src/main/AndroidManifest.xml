@@ -19,7 +19,7 @@
         android:theme="@style/Theme.Mldoom"
         tools:targetApi="31">
         <activity
-            android:name=".CameraActivity"
+            android:name=".ui.CameraActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
